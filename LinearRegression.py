@@ -44,13 +44,13 @@ class LinearRegressionClassifier:
         return self.weight * X + self.bias
     
     def total_loss(self):
-        return [(y[i] - (self.weight * x + self.bias)) ** 2 for i, x in enumerate(self.X)]
+        return [(self.y[i] - (self.weight * x + self.bias)) ** 2 for i, x in enumerate(self.X)]
     
     def b_prime(self):
-        return [(y[i] - (self.weight * x + self.bias)) * -2 for i, x in enumerate(self.X)]
+        return [(self.y[i] - (self.weight * x + self.bias)) * -2 for i, x in enumerate(self.X)]
 
     def w_prime(self):
-        return [(y[i] - (self.weight * x + self.bias)) * -2 * x for i, x in enumerate(self.X)]
+        return [(self.y[i] - (self.weight * x + self.bias)) * -2 * x for i, x in enumerate(self.X)]
 
     def update_parameters(self):
         w_gradients = 0
