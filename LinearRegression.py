@@ -3,7 +3,7 @@
     usage:
         clf = LinearRegressionClassifier()
         clf.fit(X, y)
-    For 2-D regression only :)
+    For 1-D regression only :)
 '''
 
 import numpy as np 
